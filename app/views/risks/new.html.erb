@@ -1,0 +1,33 @@
+<%= form_for @risk do |f| %>
+    <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category %><br>
+      <%= f.select :category, options_for_select(Risk.categories.map {|k, v| [v.humanize.capitalize, k]}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :occured_at %><br>
+      <%= f.date_field :occured_at %>
+    </div>
+
+    <div class="field">
+      <%= f.label :danger_rate %><br>
+      <%= f.number_field :danger_rate %>
+    </div>
+
+    <div class="field">
+      <%= f.label :origin_type %><br>
+      <%= f.select :origin_type, options_for_select(Risk.types.map {|k, v| [v.humanize.capitalize, k]}) %>
+    </div>
+
+    <%= f.submit "Create" %>
+<% end %>

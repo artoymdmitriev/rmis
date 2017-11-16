@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20171116203516) do
   create_table "risks", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "category", null: false
+    t.string "category", null: false
     t.date "occured_at", null: false
     t.integer "danger_rate", null: false
-    t.integer "type", null: false
+    t.string "origin_type", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
