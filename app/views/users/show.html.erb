@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Мой профиль</h1>
+<div class="col-md-3">
+  <% if @user.avatar.nil? %>
+    <%= image_tag 'man128' %>
+  <% else %>
+    <%= image_tag @user.avatar, width: 128 %>
+  <% end %>
+</div>
+<div class="col-md-6">
+  <div>
+    <h1><%= @user.name %></h1>
+  </div>
+  <div>
+    <h1><%= @user.surname %></h1>
+  </div>
+</div>
