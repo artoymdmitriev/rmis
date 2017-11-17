@@ -1,15 +1,15 @@
 class RisksController < ApplicationController
 
+  def index
+    @risks = Risk.where(user_id: current_user.id)
+  end
+
   def new
     @risk = Risk.new
   end
 
   def create
     @risk = Risk.create(risk_params.merge(user_id: current_user.id))
-  end
-
-  def update
-
   end
 
   def destroy

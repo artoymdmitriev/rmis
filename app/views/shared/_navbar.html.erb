@@ -9,18 +9,16 @@
       <li class="nav-item active">
         <%= link_to 'Главная', root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item active">
+        <%= link_to 'Риски', risks_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
+        <%= link_to 'Импортировать данные', root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Экспортировать данные', root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
         <%= link_to 'Мой профиль', user_path(current_user), class: "nav-link" %>
       </li>
     </ul>

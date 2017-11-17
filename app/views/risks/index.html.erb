@@ -1,0 +1,14 @@
+<% @risks.each do |risk| %>
+    <div class="risk">
+      <div class="name">
+        <%= risk.name %>
+      </div>
+      <div class="description">
+        <%= risk.description %>
+      </div>
+      <div class="category">
+        <%= risk.category %>
+      </div>
+      <hr>
+    </div>
+<% end %>
