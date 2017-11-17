@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  layout false
+  layout 'application_clean'
 
   before_action :configure_permitted_parameters, :only => [:create]
 
