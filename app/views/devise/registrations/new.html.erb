@@ -19,7 +19,7 @@
     </div>
 
     <div class="field" style="margin-bottom: 12px;">
-      <%= f.label :password %>
+      <%= f.label 'Пароль (мин. 6 символов)' %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -27,12 +27,12 @@
     </div>
 
     <div class="field" style="margin-bottom: 12px;">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label 'Подтверждение пароля' %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Зарегистрироваться", class: 'btn btn-primary btn-block' %>
+      <%= f.submit "Зарегистрироваться", class: 'btn btn-primary btn-block', style: 'margin-bottom: 12px' %>
     </div>
 <% end %>
 
