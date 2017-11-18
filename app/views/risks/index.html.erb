@@ -1,14 +1,13 @@
 <% @risks.each do |risk| %>
-    <div class="risk">
-      <div class="name">
-        <%= risk.name %>
+    <div class="container-fluid col-md-4">
+      <div class="card" style="padding: 10px; margin: 8px;">
+        <div class="card-block">
+          <h4 class="card-title"><%= risk.name %></h4>
+          <h6 class="card-subtitle mb-2 text-muted"><%= Risk.categories[risk.category] %></h6>
+          <p class="card-text"><%= risk.description %></p>
+          <%= link_to 'Редактировать', edit_risk_path(risk) %>
+          <%= link_to 'Удалить', risk, method: :delete %>
+        </div>
       </div>
-      <div class="description">
-        <%= risk.description %>
-      </div>
-      <div class="category">
-        <%= Risk.categories[risk.category] %>
-      </div>
-      <hr>
     </div>
 <% end %>
