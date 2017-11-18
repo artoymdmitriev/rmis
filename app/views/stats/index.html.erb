@@ -1,0 +1,39 @@
+<div class="container-fluid col-md-6">
+  <div class="card" style="padding: 10px; margin: 8px;">
+    <div class="card-block">
+      <%= line_chart @risks.group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid col-md-6">
+  <div class="card" style="padding: 10px; margin: 8px;">
+    <div class="card-block">
+      <%= line_chart @risks.group(:origin_type).group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid col-md-6">
+  <div class="card" style="padding: 10px; margin: 8px;">
+    <div class="card-block">
+      <%= pie_chart @risks.group(:origin_type).count %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid col-md-6">
+  <div class="card" style="padding: 10px; margin: 8px;">
+    <div class="card-block">
+      <%= pie_chart @risks.group(:danger_rate).count %>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid col-md-6">
+  <div class="card" style="padding: 10px; margin: 8px;">
+    <div class="card-block">
+      <%= scatter_chart scatter_data, xtitle: "Встречаемость", ytitle: "Критичность"%>
+    </div>
+  </div>
+</div>

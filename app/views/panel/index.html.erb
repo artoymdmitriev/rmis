@@ -1,7 +1,0 @@
-<%= javascript_include_tag "//www.google.com/jsapi" %>
-
-<%= line_chart @risks.group_by_day(:occured_at).count %>
-
-<%= pie_chart Risk.group(:origin_type).count %>
-
-<%= line_chart Risk.group(:origin_type).group_by_day(:occured_at).count %>

@@ -19,7 +19,7 @@ class RisksController < ApplicationController
   end
 
   def show
-    
+
   end
 
   private
