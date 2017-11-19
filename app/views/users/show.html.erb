@@ -1,7 +1,7 @@
 <h1>Мой профиль</h1>
 <div class="col-md-3">
   <% if @user.avatar.nil? %>
-    <%= image_tag 'man128' %>
+    <%= image_tag 'default_avatars/man128' %>
   <% else %>
     <%= image_tag @user.avatar, width: 128 %>
   <% end %>
