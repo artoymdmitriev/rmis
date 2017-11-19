@@ -2,7 +2,7 @@ class RisksController < ApplicationController
   before_action :set_risk, only: [:destroy, :show]
 
   def index
-    @risks = Risk.where(user_id: current_user.id)
+    @risks = Risk.where(user_id: current_user.id).page(params[:page]).per(9)
     respond_to do |format|
       format.html
       format.csv { send_data @risks.to_csv }

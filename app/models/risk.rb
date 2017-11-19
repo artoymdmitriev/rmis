@@ -1,4 +1,5 @@
 class Risk < ApplicationRecord
+  paginates_per  5
   enum type: {
       internal: 'Внутренний',
       external: 'Внешний'
