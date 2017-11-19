@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86dd1640-28e2-4a28-9916-82b1853841bb" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/man128.png" afterPath="$PROJECT_DIR$/app/assets/images/default_avatars/man128.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/man512.png" afterPath="$PROJECT_DIR$/app/assets/images/default_avatars/man512.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/images/man64.png" afterPath="$PROJECT_DIR$/app/assets/images/default_avatars/man64.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -465,12 +461,12 @@
       <workItem from="1510855532887" duration="27266000" />
       <workItem from="1510883605952" duration="628000" />
       <workItem from="1511007368230" duration="34784000" />
-      <workItem from="1511093325978" duration="5360000" />
+      <workItem from="1511093325978" duration="5456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68038000" />
+    <option name="totallyTimeSpent" value="68134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="695" y="47" width="1865" height="1092" extended-state="6" />
