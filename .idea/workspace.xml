@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86dd1640-28e2-4a28-9916-82b1853841bb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/risks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/risks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/stats_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/stats_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/risks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/risks/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stats/index.html.erb" afterPath="$PROJECT_DIR$/app/views/stats/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -24,35 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/stats/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stats_helper.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/stats_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="risks_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/risks_controller.rb">
+      <file leaf-file-name="assets.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -124,6 +95,7 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/helpers/stats_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/stats/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
       </list>
     </option>
   </component>
@@ -469,12 +441,12 @@
       <workItem from="1510855532887" duration="27266000" />
       <workItem from="1510883605952" duration="628000" />
       <workItem from="1511007368230" duration="34784000" />
-      <workItem from="1511093325978" duration="4753000" />
+      <workItem from="1511093325978" duration="5160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67431000" />
+    <option name="totallyTimeSpent" value="67838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="695" y="47" width="1865" height="1092" extended-state="6" />
@@ -814,11 +786,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/stats/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="282">
+          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -838,15 +814,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/stats/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
