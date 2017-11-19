@@ -13,10 +13,7 @@
         <%= link_to 'Риски', risks_path, class: "nav-link" %>
       </li>
       <li class="nav-item active">
-        <%= link_to 'Импортировать данные', root_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to 'Экспортировать данные', root_path, class: "nav-link" %>
+        <%= link_to 'Экспортировать данные', download_risks_path, class: "nav-link" %>
       </li>
       <li class="nav-item active">
         <%= link_to 'Мой профиль', user_path(current_user), class: "nav-link" %>
@@ -24,23 +21,23 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
               <li><%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                    <i class="glyphicon glyphicon-log-out"></i>&nbsp; <%= t '.logout' %>
+                    <i class="glyphicon glyphicon-log-out"></i>&nbsp; Выйти
                 <% end %>
               </li>
           <% else %>
               <li><%= link_to new_user_session_path, class: 'nav-link' do %>
-                    <i class="glyphicon glyphicon-log-in"></i>&nbsp; <%= t '.login' %>
+                    <i class="glyphicon glyphicon-log-in"></i>&nbsp; Войти
                 <% end %>
               </li>
               <li><%= link_to new_user_registration_path, class: 'nav-link' do %>
-                    <i class="glyphicon glyphicon-plus"></i>&nbsp; <%= t '.register' %>
+                    <i class="glyphicon glyphicon-plus"></i>&nbsp; Регистрация
                 <% end %>
               </li>
           <% end %>

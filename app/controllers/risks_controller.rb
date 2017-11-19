@@ -3,6 +3,11 @@ class RisksController < ApplicationController
 
   def index
     @risks = Risk.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @risks.to_csv }
+      format.xls
+    end
   end
 
   def new
@@ -20,6 +25,15 @@ class RisksController < ApplicationController
 
   def show
 
+  end
+
+  def download
+
+  end
+
+  def import
+    Risk.import(params[:file], user_id: current_user.id)
+    redirect_to risks_path, notice: "Данные успешно загружены!"
   end
 
   private

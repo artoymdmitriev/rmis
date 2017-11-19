@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">category</Data></Cell>
+        <Cell><Data ss:Type="String">name</Data></Cell>
+        <Cell><Data ss:Type="String">danger_rate</Data></Cell>
+        <Cell><Data ss:Type="String">origin_type</Data></Cell>
+        <Cell><Data ss:Type="String">occured_at</Data></Cell>
+        <Cell><Data ss:Type="String">description</Data></Cell>
+      </Row>
+      <% @risks.each do |risk| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= risk.category %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= risk.name %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= risk.danger_rate %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= risk.origin_type %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= risk.occured_at %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= risk.description %></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

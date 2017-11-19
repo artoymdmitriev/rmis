@@ -4,7 +4,14 @@ Rails.application.routes.draw do
   root 'stats#index'
   devise_for :users, :controllers => { :sessions => "sessions", :registrations => "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :risks
+  resources :risks do
+    collection do
+      get :download
+    end
+    collection do
+      post :import
+    end
+  end
   resources :users
 
 end
