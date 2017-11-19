@@ -1,17 +1,19 @@
 <div class="container">
-  <% @risks.each do |risk| %>
-      <div class="container-fluid col-md-4">
-        <div class="card" style="padding: 10px; margin: 8px;">
-          <div class="card-block">
-            <h4 class="card-title"><%= risk.name %></h4>
-            <h6 class="card-subtitle mb-2 text-muted"><%= Risk.categories[risk.category] %></h6>
-            <p class="card-text"><%= risk.description %></p>
-            <%= link_to 'Редактировать', edit_risk_path(risk) %>
-            <%= link_to 'Удалить', risk, method: :delete %>
+  <div class="row">
+    <% @risks.each do |risk| %>
+        <div class="col-md-4">
+          <div class="card" style="padding: 10px; margin: 8px;">
+            <div class="card-block">
+              <h4 class="card-title"><%= risk.name %></h4>
+              <h6 class="card-subtitle mb-2 text-muted"><%= Risk.categories[risk.category] %></h6>
+              <p class="card-text"><%= risk.description %></p>
+              <%= link_to 'Редактировать', edit_risk_path(risk) %>
+              <%= link_to 'Удалить', risk, method: :delete %>
+            </div>
           </div>
         </div>
-      </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div style="padding: 10px; margin: 8px;">

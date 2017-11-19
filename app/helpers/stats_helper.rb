@@ -16,4 +16,11 @@ module StatsHelper
     end
     arr
   end
+
+  def line_chart_data
+    hash = @risks.group(:origin_type).group_by_day(:occured_at).count.each do |k, v|
+      k[0] == 'external' ? k[0] = 'Внешний' : k[0] = 'Внутренний'
+    end
+    hash
+  end
 end

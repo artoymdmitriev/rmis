@@ -1,39 +1,57 @@
-<div class="container-fluid col-md-6">
-  <div class="card" style="padding: 10px; margin: 8px;">
-    <div class="card-block">
-      <%= line_chart @risks.group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 align="center">Распределение по дате</h2>
+        <%= line_chart @risks.group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 align="center">Распределение по дате для каждого источника</h2>
+        <%= line_chart line_chart_data, xtitle: "Дата", ytitle: "Количество"  %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid col-md-6">
-  <div class="card" style="padding: 10px; margin: 8px;">
-    <div class="card-block">
-      <%= line_chart @risks.group(:origin_type).group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 align="center">Распределение по источникам</h2>
+        <%= pie_chart [
+                          [
+                              'Внутренний',
+                              @risks.where(origin_type: :internal).count
+                          ],
+                          [
+                              'Внешний',
+                              @risks.where(origin_type: :external).count
+                          ]
+                      ]  %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 align="center">Распределение по уровню критичности</h2>
+        <%= pie_chart @risks.group(:danger_rate).count %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid col-md-6">
-  <div class="card" style="padding: 10px; margin: 8px;">
-    <div class="card-block">
-      <%= pie_chart @risks.group(:origin_type).count %>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid col-md-6">
-  <div class="card" style="padding: 10px; margin: 8px;">
-    <div class="card-block">
-      <%= pie_chart @risks.group(:danger_rate).count %>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid col-md-6">
-  <div class="card" style="padding: 10px; margin: 8px;">
-    <div class="card-block">
-      <%= scatter_chart scatter_data, xtitle: "Встречаемость", ytitle: "Критичность"%>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 align="center">Диаграмма рассеяния "Критичность-встречаемость"</h2>
+        <%= scatter_chart scatter_data, xtitle: "Встречаемость", ytitle: "Критичность"%>
+      </div>
     </div>
   </div>
 </div>
