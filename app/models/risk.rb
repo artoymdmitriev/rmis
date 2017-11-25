@@ -1,5 +1,4 @@
 class Risk < ApplicationRecord
-  paginates_per  5
   enum type: {
       internal: 'Внутренний',
       external: 'Внешний'
@@ -29,7 +28,7 @@ class Risk < ApplicationRecord
 
   def self.to_csv(options = {})
     attributes = %w{category name danger_rate origin_type occured_at description}
-    CSV.generate(options) do |csv|
+    CSV.generate(encoding: Encoding::WINDOWS_1251) do |csv|
       csv << attributes
       all.each do |risk|
         csv << risk.attributes.values_at(*attributes)

@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Risks") do |sheet|
+sheet.add_row ['category', 'name', 'danger_rate', 'origin_type', 'occured_at', 'description']
+@risks.each do |risk|
+sheet.add_row [risk.category, risk.name, risk.danger_rate, risk.origin_type, risk.occured_at, risk.description]
+end
+end
