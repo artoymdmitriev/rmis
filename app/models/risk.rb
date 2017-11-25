@@ -20,9 +20,9 @@ class Risk < ApplicationRecord
 
   def self.open_file(file)
     case File.extname(file.original_filename)
-      when ".csv" then Roo::CSV.new(file.path, options={})
-      when ".xls" then Roo::Excel.new(file.path, options={})
-      when ".xlsx" then Roo::Excelx.new(file.path, options={})
+      when ".csv" then Roo::CSV.new(file.path, csv_options: { encoding: Encoding::UTF_8 })
+      when ".xls" then Roo::Excel.new(file.path, xls_options: { encoding: Encoding::UTF_8 })
+      when ".xlsx" then Roo::Excelx.new(file.path, xlsx_options: { encoding: Encoding::UTF_8 })
       else raise "Unknown file type: #{file.original_filename}"
     end
   end
