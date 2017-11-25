@@ -7,12 +7,12 @@
             <div class="card" style="padding: 10px; margin: 8px;">
               <div class="card-block">
                 <div style="padding: 5px">
-                  <%= label_tag 'Начальная дата' %></br>
-                  <%= date_field_tag :start_date, class: 'form-control' %>
+                  <%= label_tag 'Начальная дата' %><br>
+                  <%= date_field_tag :start_date, nil, class: 'form-control' %>
                 </div>
                 <div style="padding: 5px">
-                  <%= label_tag 'Конечная дата' %></br>
-                  <%= date_field_tag :end_date, class: 'form-control' %>
+                  <%= label_tag 'Конечная дата' %><br>
+                  <%= date_field_tag :end_date, nil, class: 'form-control' %>
                 </div>
                 <%= submit_tag "CSV", value: 'csv', name: 'format', class: 'btn btn-primary' %>
                 <%= submit_tag "XLS", value: 'xls', name: 'format', class: 'btn btn-primary' %>

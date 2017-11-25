@@ -1,5 +1,5 @@
 class RisksController < ApplicationController
-  before_action :set_risk, only: [:destroy, :show]
+  before_action :set_risk, only: [:destroy, :show, :edit, :update]
   before_action :risks_to_export, :export
 
   def index
@@ -36,7 +36,14 @@ class RisksController < ApplicationController
   end
 
   def show
+  end
 
+  def edit
+  end
+
+  def update
+    @risk.update(risk_params)
+    redirect_to risks_path
   end
 
   def import

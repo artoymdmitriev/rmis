@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Редактировать риск</h1>
+      <%= form_for @risk do |f| %>
+          <div class="field">
+            <%= f.label 'Название' %><br>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label 'Описание' %><br>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label 'Категория' %><br>
+            <%= f.select :category, options_for_select(Risk.categories.map {|k, v| [v.humanize.capitalize, k]}, class: 'form-control') %>
+          </div>
+
+          <div class="field">
+            <%= f.label 'Дата' %><br>
+            <%= f.date_field :occured_at, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label 'Уровень опасности' %><br>
+            <%= f.number_field :danger_rate, class: 'form-control' %>
+          </div>
+
+          <div class="field">
+            <%= f.label 'Источник риска' %><br>
+            <%= f.select :origin_type, options_for_select(Risk.types.map {|k, v| [v.humanize.capitalize, k]}, class: 'form-control') %>
+          </div>
+          <br>
+          <%= f.submit "Сохранить", class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>

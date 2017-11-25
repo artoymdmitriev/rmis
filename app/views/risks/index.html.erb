@@ -6,9 +6,18 @@
             <div class="card-block">
               <h4 class="card-title"><%= risk.name %></h4>
               <h6 class="card-subtitle mb-2 text-muted"><%= Risk.categories[risk.category] %></h6>
-              <p class="card-text"><%= risk.description %></p>
-              <%= link_to 'Редактировать', edit_risk_path(risk) %>
-              <%= link_to 'Удалить', risk, method: :delete %>
+              <p class="card-text truncate"><%= risk.description %></p>
+              <div align="right">
+                <%= link_to risk_path(risk), style: "text-decoration:none" do %>
+                    <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-eye-open"></span>
+                <% end %>
+                <%= link_to edit_risk_path(risk), style: "text-decoration:none" do %>
+                    <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-edit"></span>
+                <% end %>
+                <%= link_to risk, method: :delete, style: "text-decoration:none" do %>
+                    <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-trash"></span>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
