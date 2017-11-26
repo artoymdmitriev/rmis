@@ -1,8 +1,7 @@
 module RisksHelper
   def scatter_data
-    risks_by_categories = @risks.group_by {|i| i.category}
     arr = []
-    risks_by_categories.each do |k, v|
+    @risks.group_by {|i| i.category}.each do |k, v|
       hsh = { name: k, data: [v.group_by {|it| it.danger_rate }] }
       hsh[:data].each do |item|
         item.each do |key, val|
@@ -14,7 +13,7 @@ module RisksHelper
       hsh[:data].each { |i| i.reverse!}
       arr << hsh
     end
-    arr
+    arr.each { |item| item[:name] = Risk.categories[item[:name]]}
   end
 
   def line_chart_data
