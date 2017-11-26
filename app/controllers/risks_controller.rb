@@ -1,6 +1,6 @@
 class RisksController < ApplicationController
   before_action :set_risk, only: [:destroy, :show, :edit, :update]
-  before_action :risks_to_export, :export
+  before_action :risks_filtered_by_date, only: [:export, :export, :stats]
 
   def index
     @risks = Risk.where(user_id: current_user.id).page(params[:page]).per(15)
@@ -23,8 +23,7 @@ class RisksController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        send_data @risks.to_csv
-        response.headers['Content-Disposition'] = 'attachment; filename="risks.csv"'
+        send_data @risks.to_csv, filename: 'risks.csv'
       end
       format.xls {
         response.headers['Content-Disposition'] = 'attachment; filename="risks.xls"'
@@ -51,6 +50,13 @@ class RisksController < ApplicationController
     redirect_to risks_path, notice: "Данные успешно загружены!"
   end
 
+  def stats
+    puts "stats: " + @risks.size.to_s
+    respond_to do |format|
+      format.html
+    end
+  end
+
   private
   def set_risk
     @risk = Risk.find(params[:id])
@@ -61,7 +67,7 @@ class RisksController < ApplicationController
     :occured_at, :danger_rate, :origin_type)
   end
 
-  def risks_to_export
+  def risks_filtered_by_date
     if empty_date?(params[:start_date]) && empty_date?(params[:end_date])
       @risks = Risk.all
     elsif empty_date?(params[:start_date])
@@ -74,6 +80,7 @@ class RisksController < ApplicationController
   end
 
   def empty_date? date
+    return Risk.all if date.nil?
     date == '' ? true : false
   end
 end
