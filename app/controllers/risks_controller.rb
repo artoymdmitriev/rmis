@@ -1,9 +1,10 @@
 class RisksController < ApplicationController
   before_action :set_risk, only: [:destroy, :show, :edit, :update]
-  before_action :risks_filtered_by_date, only: [:export, :export, :stats]
+  before_action :risks_filtered_by_date, only: [:export, :stats]
+  before_action :risks_filtered_by_user, only: [:export, :stats]
 
   def index
-    @risks = Risk.where(user_id: current_user.id).page(params[:page]).per(15)
+    @risks = Risk.all.order(created_at: :desc).page(params[:page]).per(15)
   end
 
   def new
@@ -12,6 +13,7 @@ class RisksController < ApplicationController
 
   def create
     @risk = Risk.create(risk_params.merge(user_id: current_user.id))
+    redirect_to risks_path
   end
 
   def destroy
@@ -51,7 +53,6 @@ class RisksController < ApplicationController
   end
 
   def stats
-    puts "stats: " + @risks.size.to_s
     respond_to do |format|
       format.html
     end
@@ -59,7 +60,7 @@ class RisksController < ApplicationController
 
   private
   def set_risk
-    @risk = Risk.find(params[:id])
+    @risk = Risk.includes(:user).find(params[:id])
   end
 
   def risk_params
@@ -80,7 +81,12 @@ class RisksController < ApplicationController
   end
 
   def empty_date? date
-    return Risk.all if date.nil?
-    date == '' ? true : false
+    (date.nil? || !date.present?) ? true : false
+  end
+
+  def risks_filtered_by_user
+    if params[:only_my_risks].present?
+      @risks = @risks.where(user_id: current_user.id)
+    end
   end
 end

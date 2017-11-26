@@ -4,18 +4,20 @@
         <div class="col-md-4">
           <div class="card" style="padding: 10px; margin: 8px;">
             <div class="card-block">
-              <h4 class="card-title"><%= risk.name %></h4>
+              <h4 class="card-title"><%= link_to risk.name, risk_path(risk), style: "text-decoration:none" %></h4>
               <h6 class="card-subtitle mb-2 text-muted"><%= Risk.categories[risk.category] %></h6>
               <p class="card-text truncate"><%= risk.description %></p>
               <div align="right">
                 <%= link_to risk_path(risk), style: "text-decoration:none" do %>
                     <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-eye-open"></span>
                 <% end %>
-                <%= link_to edit_risk_path(risk), style: "text-decoration:none" do %>
-                    <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-edit"></span>
-                <% end %>
-                <%= link_to risk, method: :delete, style: "text-decoration:none" do %>
-                    <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-trash"></span>
+                <% if !current_user.nil? && risk.user_id == current_user.id %>
+                  <%= link_to edit_risk_path(risk), style: "text-decoration:none" do %>
+                      <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-edit"></span>
+                  <% end %>
+                  <%= link_to risk, method: :delete, style: "text-decoration:none" do %>
+                      <span style="font-size:1.2em; padding: 2px;" class="glyphicon glyphicon-trash"></span>
+                  <% end %>
                 <% end %>
               </div>
             </div>

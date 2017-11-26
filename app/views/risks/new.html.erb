@@ -36,18 +36,16 @@
           <%= f.submit "Создать", class: 'btn btn-primary btn-block' %>
       <% end %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
       <div class="row">
-        <div class="col-md-6">
-          <div class="card" style="padding: 10px; margin: 8px;">
-            <div class="card-block">
-              <h1>Импортировать данные из файла</h1>
-              <h4>CSV / XLS / XLSX</h4>
-              <%= form_tag import_risks_path, multipart: true do %>
-                  <%= file_field_tag :file %><br>
-                  <%= submit_tag "Импортировать", class: 'btn btn-primary' %>
-              <% end %>
-            </div>
+        <div class="card" style="padding: 10px; margin: 8px;">
+          <div class="card-block">
+            <h1>Импортировать данные из файла</h1>
+            <h4>CSV / XLS / XLSX</h4>
+            <%= form_tag import_risks_path, multipart: true do %>
+                <%= file_field_tag :file %><br>
+                <%= submit_tag "Импортировать", class: 'btn btn-primary' %>
+            <% end %>
           </div>
         </div>
       </div>

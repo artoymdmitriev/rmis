@@ -1,1 +1,43 @@
-<%= @risk.name %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-2">
+    <div>
+      <h1 align="center"><%= @risk.name %></h1>
+      <h3 align="center" style="color: GrayText"><%= Risk.categories[@risk.category] %></h3>
+      <div class="row">
+        <div>Описание: </div>
+        <div><%= @risk.description %></div>
+      </div>
+      <div class="row">
+        <div>Дата происшествия: </div>
+        <div><%= @risk.occured_at %></div>
+      </div>
+
+      <div class="row">
+        <div>Уровень риска: </div>
+        <div><%= @risk.danger_rate %></div>
+      </div>
+      <div class="row">
+        <div>Источник риска: </div>
+        <div><%= Risk.types[@risk.origin_type] %></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card" style="padding: 10px; margin: 8px;">
+      <div class="card-block">
+        <h2 class="card-title" align="center">Автор риска:</h2>
+        <div class="col-md-4">
+          <% if @risk.user.avatar.nil? %>
+              <%= image_tag 'default_avatars/man128.png', class: 'img-responsive' %>
+          <% else %>
+              <%= image_tag @risk.user.avatar, class: 'img-responsive' %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <h3><%= @risk.user.name %></h3>
+          <h3><%= @risk.user.surname %></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
