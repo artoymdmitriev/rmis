@@ -3,7 +3,7 @@
       <div class="card" style="padding: 10px; margin: 8px;">
         <div class="card-block">
           <h2 align="center">Распределение по дате</h2>
-          <%= line_chart @risks.group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество" %>
+          <%= line_chart @risks.group_by_day(:occured_at).count, xtitle: "Дата", ytitle: "Количество", height: '400px' %>
         </div>
       </div>
     </div>
